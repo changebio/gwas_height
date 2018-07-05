@@ -1,0 +1,12 @@
+.*
+__pycache__
+!.gitignore
+data
+ddat
+fastai
+/data
+/out
+/report
+/tmp
+/models
+/models_1996
