@@ -1,7 +1,6 @@
 Predict Height
 ==============
 
-<<<<<<< HEAD
 Predict height by gender and genotypes.   
 The models are trained on hg19 data.  
 It can also work well on hg38 data  
@@ -26,63 +25,29 @@ predict_height/
 ├── PlinkCmd.py  
 ├── predhpipeline.py  
 ├── snp2h.py  
-├── README.md  
-=======
-Predict height by gender and genotypes.
-The models are trained on hg19 data.
-It can also work well on hg38 data
-These are many kinds of models by different snp cutoff(top200,top200_all,...) and training methods(full_model). 
-predict_height/
-├── full_model
-│   ├── gender_residual.model
-│   ├── top200
-│   │   ├── linear_regression.model
-│   │   ├── logistic_25perc.model
-│   │   ├── logistic_avg.model
-│   │   ├── pca_95.model
-│   │   └── ref.bim
-│   ├── top200_all
-│   ├         …
-├── lib
-│   ├── hg19ToHg38.over.chain.gz
-│   ├── hg38ToHg19.over.chain.gz
-│   ├── liftOver
-│   └── maf.csv
-├── LiftoverCmd.py
-├── PlinkCmd.py
-├── predhpipeline.py
-├── snp2h.py
 ├── README.md
->>>>>>> 005840a27dd44ced49bd79424230905f8249f3c5
+
 
 # Usage
 
 ### Prepare data ( for example, using temp as file prefix )
 
 #### Genotype 
-<<<<<<< HEAD
+
 1. temp.vcf or temp.vcf.gz  
 2. temp.ped and temp.map  
 3. temp.bim, temp.fam, and temp.bed  
-=======
-1. temp.vcf or temp.vcf.gz
-2. temp.ped and temp.map 
-3. temp.bim, temp.fam, and temp.bed
->>>>>>> 005840a27dd44ced49bd79424230905f8249f3c5
+
 
 #### LiftOver
 temp.Hg19
 
 #### Specimen
-<<<<<<< HEAD
+
 sample information is not necessary. if there is this information, it file should have at least one column (`gender`, 1 as male, 2 as female) and separate by Tab. The order of the rows must be the same as the samples in Genotype file. If height column is given, model will output R2 and MSE for regression or AUC and F1 score for classification.  
-for example, meta.csv  
+for example, meta.csv   
 Specimen file as below: 1 column (gender)  
-=======
-sample information is not necessary. if there is this information, it file should have at least one column (`gender`, 1 as male, 2 as female) and separate by Tab. The order of the rows must be the same as the samples in Genotype file. If height column is given, model will output R2 and MSE for regression or AUC and F1 score for classification.
-for example, meta.csv 
-Specimen file as below: 1 column (gender)
->>>>>>> 005840a27dd44ced49bd79424230905f8249f3c5
+
 ```
 	gender
 TL2257	1
@@ -137,11 +102,8 @@ python PlinkCmd.py -g ddat/crowdAI/temp.vcf.gz
 #for plink file(.ped and .pad) input is prefix
 python PlinkCmd.py -g ddat/crowdAI/temp
 ```
-<<<<<<< HEAD
+
 2. Liftover hg38 to hg19. *If It is hg19 data, skip this step and go to 3.1 Height prediction without liftover*
-=======
-2. Liftover hg38 to hg19. If It is hg19 data, skip this step and go to 3.1 Height prediction without liftover
->>>>>>> 005840a27dd44ced49bd79424230905f8249f3c5
 ```
 python LiftoverCmd.py -g ddat/crowdAI/temp -c hg38ToHg19
 ```
@@ -159,23 +121,15 @@ python snp2h.py -g ddat/crowdAI/temp -m linear_regression logistic_avg logistic_
 ```
 
 # Requirements
-<<<<<<< HEAD
+
 Python 3.6.5  
 sklearn=0.18.2  
 numpy=1.14.3=py36h28100ab_2  
 pandas=0.22.0=py36_1  
 pandas-plink=1.2.25=py36_0  
 plink=1.90b4=1  
-scipy=1.1.0=py36hfc37229_0  
-=======
-Python 3.6.5
-sklearn=0.18.2
-numpy=1.14.3=py36h28100ab_2
-pandas=0.22.0=py36_1
-pandas-plink=1.2.25=py36_0
-plink=1.90b4=1
 scipy=1.1.0=py36hfc37229_0
->>>>>>> 005840a27dd44ced49bd79424230905f8249f3c5
+
 
 install plink
 ```
