@@ -1,5 +1,5 @@
 from sklearn.externals import joblib
-from sklearn.linear_model import BayesianRidge, LinearRegression, ElasticNet, Lasso
+from sklearn.linear_model import BayesianRidge, LinearRegression, ElasticNet, Lasso, LogisticRegression
 from sklearn.svm import SVR
 from sklearn.ensemble.gradient_boosting import GradientBoostingRegressor
 import os
@@ -13,7 +13,9 @@ _models = {
     'elastic_net': ElasticNet(),
     'lasso': Lasso(),
     'svr': SVR(kernel='linear'),
-    'gbr': GradientBoostingRegressor(n_estimators=300, max_depth=5)
+    'gbr': GradientBoostingRegressor(n_estimators=300, max_depth=5),
+    'logistic_avg': LogisticRegression(),
+    'logistic_25perc': LogisticRegression()
 }
 
 
