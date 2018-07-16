@@ -22,7 +22,7 @@ def init_args(arguments=None):
     parser.add_argument('-s', '--specimen', help='the sample information')
     #parser.add_argument('-l', 'liftover', help='the output file with suffix .Hg19 or .Hg38 from LiftoverCmd.py',default=None)
     parser.add_argument('-c', '--chain', help='Liftover Chain file',choices=['hg38ToHg19','hg19ToHg38',None],default=None)
-    parser.add_argument('-m', '--model', help='a list of prediction models',choices=['linear_regression','logistic_avg','logistic_25perc'],default=['linear_regression'],nargs='+')
+    parser.add_argument('-m', '--model', help='a list of prediction models',choices=['linear_regression','logistic_avg','logistic_25perc','logistic_15perc','rfc_avg','rfc_25perc','rfc_15perc'],default=['linear_regression'],nargs='+')
     parser.add_argument('--snp-list', help='Choose type of snp list', choices=['top200','top200_all','top300','top300_all','top500','top500_all'], default='top200_all')
     parser.add_argument('--model-path',help='Choose the way of model generation',choices=['full_model','rep10cv10_model'], default= 'full_model')
 

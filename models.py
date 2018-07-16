@@ -15,7 +15,11 @@ _models = {
     'svr': SVR(kernel='linear'),
     'gbr': GradientBoostingRegressor(n_estimators=300, max_depth=5),
     'logistic_avg': LogisticRegression(),
-    'logistic_25perc': LogisticRegression()
+    'logistic_25perc': LogisticRegression(),
+    'logistic_15perc': LogisticRegression()，
+    'rfc_avg':RandomForestClassifier(n_estimators=30,max_depth=4),
+    'rfc_25perc':RandomForestClassifier(n_estimators=30,max_depth=4),
+    'rfc_15perc':RandomForestClassifier(n_estimators=30,max_depth=4),
 }
 
 

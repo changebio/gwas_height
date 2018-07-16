@@ -10,8 +10,12 @@ predict_height/
 │   ├── gender_residual.model  
 │   ├── top200  
 │   │   ├── linear_regression.model  
+│   │   ├── logistic_15perc.model  
 │   │   ├── logistic_25perc.model  
 │   │   ├── logistic_avg.model  
+│   │   ├── rfc_15perc.model  
+│   │   ├── rfc_25perc.model  
+│   │   ├── rfc_avg.model  
 │   │   ├── pca_95.model  
 │   │   └── ref.bim  
 │   ├── top200_all  
@@ -44,7 +48,7 @@ temp.Hg19
 
 #### Specimen
 
-sample information is not necessary. if there is this information, it file should have at least one column (`gender`, 1 as male, 2 as female) and separate by Tab. The order of the rows must be the same as the samples in Genotype file. If height column is given, model will output R2 and MSE for regression or AUC and F1 score for classification.  
+sample information is not necessary. if there is this information, it file should have at least one column (`gender`, 1 as male, 2 as female) and separate by Tab. The order of the rows must be the same as the samples in Genotype file. If height column is given, model will output R2 and MSE for regression.  
 for example, meta.csv   
 Specimen file as below: 1 column (gender)  
 
