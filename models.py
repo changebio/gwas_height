@@ -2,6 +2,7 @@ from sklearn.externals import joblib
 from sklearn.linear_model import BayesianRidge, LinearRegression, ElasticNet, Lasso, LogisticRegression
 from sklearn.svm import SVR
 from sklearn.ensemble.gradient_boosting import GradientBoostingRegressor
+from sklearn.ensemble import RandomForestClassifier
 import os
 
 
@@ -16,10 +17,10 @@ _models = {
     'gbr': GradientBoostingRegressor(n_estimators=300, max_depth=5),
     'logistic_avg': LogisticRegression(),
     'logistic_25perc': LogisticRegression(),
-    'logistic_15perc': LogisticRegression()，
+    'logistic_15perc': LogisticRegression(),
     'rfc_avg':RandomForestClassifier(n_estimators=30,max_depth=4),
     'rfc_25perc':RandomForestClassifier(n_estimators=30,max_depth=4),
-    'rfc_15perc':RandomForestClassifier(n_estimators=30,max_depth=4),
+    'rfc_15perc':RandomForestClassifier(n_estimators=30,max_depth=4)
 }
 
 
